@@ -21,5 +21,13 @@ public class Garden extends ArrayList<Plant> {
         return "Watering with " + amount;
     }
 
+    @Override
+    public String toString() {
+        String result = "";
+        for (Plant p: this) {
+            result+= p.toString() + "\n";
+        }
+        return result;
+    }
 
 }
