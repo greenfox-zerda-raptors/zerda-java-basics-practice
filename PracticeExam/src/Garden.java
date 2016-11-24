@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+
+/**
+ * Created by almasics on 2016.11.24..
+ */
+public class Garden extends ArrayList<Plant> {
+
+    public String water(int amount){
+        int numberOfThirsty = 0;
+        for (Plant p : this){
+            if (p.isThirsty()){
+                numberOfThirsty++;
+            }
+        }
+        int waterPerPlant = (int)((float)amount/numberOfThirsty);
+        for (Plant p : this){
+            if (p.isThirsty()){
+                p.water(waterPerPlant);
+            }
+        }
+        return "Watering with " + amount;
+    }
+
+
+}
